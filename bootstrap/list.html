@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>排版</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+
+<h3>2.9列表简介</h3>
+<p>在HTML文档中，列表结构主要有三种：有序列表、无序列表和定义列表。具体使用的标签说明如下：</p>
+<ul>
+    <li>wu xu lie biao 1</li>
+    <li>wu xu lie biao 2</li>
+    <li>wu xu lie biao 3</li>
+</ul>
+<ol>
+    <li>you xu lie biao 1</li>
+    <li>you xu lie biao 2</li>
+    <li>you xu lie biao 3</li>
+</ol>
+<dl>
+    <dt>ding yi lie biao biao ti </dt>
+    <dd>ding yi lie biao 1</dd>
+    <dd>ding yi lie biao 2</dd>
+</dl>
+<h3>
+    <p>2.10-2.14 Bootstrap根据平时的使用情形提供了六种形式的列表:</p>
+    <p>☑普通列表  ☑有序列表  ☑去点列表  ☑内联列表  ☑描述列表  ☑水平描述列表</p>
+</h3>
+<p>Bootstrap对于列表，只是在margin上做了一些调整</p>
+
+<h3>2.10列表－－无列表、有序列表</h3>
+<h5>普通列表</h5>
+<ul>
+    <li>列表项目</li>
+    <li>列表项目</li>
+    <li>列表项目</li>
+    <li>列表项目</li>
+</ul>
+<h5>有序列表</h5>
+<ol>
+    <li>项目列表一</li>
+    <li>项目列表二</li>
+    <li>项目列表三</li>
+</ol>
+<h5>有序嵌套列表</h5>
+<ol>
+    <li>有序列表</li>
+    <li>
+        有序列表
+        <ol>
+            <li>)有序列表</li>
+            <li>)有序列表</li>
+        </ol>
+    </li>
+    <li>有序列表</li>
+</ol>
+
+<h3>2.11 去点列表 .list-unstyled</h3>
+<h5>无序列表去点</h5>
+<ul>
+    <li>
+        项目列表
+        <ul>
+            <li>带项目符号</li>
+            <li>带项目符号</li>
+        </ul>
+    </li>
+    <li>
+        项目列表
+        <ul  class="list-unstyled">
+            <li>不带项目符号</li>
+            <li>不带项目符号</li>
+        </ul>
+    </li>
+</ul>
+
+<h5>有序列表去序号</h5>
+<ol>
+    <li>
+        项目列表
+        <ol>
+            <li>带项目编号</li>
+            <li>带项目编号</li>
+        </ol>
+    </li>
+    <li>
+        项目列表
+        <ol class="list-unstyled">
+            <li>不带项目编号</li>
+            <li>不带项目编号</li>
+        </ol>
+    </li>
+</ol>
+
+<h5>practice</h5>
+<ol>
+    <li>有序项目列表一</li>
+    <li>
+        有序项目列表二
+        <ol class="list-unstyled">
+            <li>有序二级项目列表一</li>
+            <li>
+                有序二级项目列表二
+                <ul>
+                    <li>无序三级项目列表一</li>
+                    <li>
+                        无序三级项目列表二
+                        <ul class="list-unstyled">
+                            <li>无序四级项目列表一</li>
+                            <li>无序四级项目列表二</li>
+                        </ul>
+                    </li>
+                    <li>无序三级项目列表三</li>
+                </ul>
+            </li>
+            <li>有序二级项目列表三</li>
+        </ol>
+    </li>
+    <li>有序项目列表三</li>
+</ol>
+
+<h3>2.13 列表--内联列表 .list-inline</h3>
+<p><strong>把垂直列表换成水平列表，而且去掉项目符号（编号），保持水平显示。</strong></p>
+<p><strong>bootstrap源码:</strong></p>
+<pre>
+    .list-inline {
+padding-left: 0;
+margin-left: -5px;
+list-style: none;
+}
+.list-inline > li {
+display: inline-block;
+padding-right: 5px;
+padding-left: 5px;
+}</pre>
+<h5>practice</h5>
+<ul class="list-inline">
+    <li>W3cplus</li>
+    <li>Blog</li>
+    <li>CSS3</li>
+    <li>jQuery</li>
+    <li>PHP</li>
+</ul>
+
+<h3>2.13 列表--定义列表</h3>
+<p><strong>对于定义列表而言，Bootstrap并没有做太多的调整，只是调整了行间距，外边距和字体加粗效果。</strong></p>
+<p><strong>bootstrap源码:</strong></p>
+<pre>
+dl {
+margin-top: 0;
+margin-bottom: 20px;
+}
+dt,
+dd {
+line-height: 1.42857143;
+}
+dt {
+font-weight: bold;
+}
+dd {
+margin-left: 0;
+}
+</pre>
+<h5>practice</h5>
+<dl>
+    <dt>2016-7-21 计划</dt>
+    <dd>将第二章排版学习完</dd>
+    <dt>2016-7-22 计划</dt>
+    <dd>将第三章表单学习完</dd>
+</dl>
+
+<h3>2.14 列表--水平定义列表 .dl-horizontal</h3>
+<pre>
+@media (min-width: 768px) {
+.dl-horizontal dt {
+float: left;
+width: 160px;
+overflow: hidden;
+clear: left;
+text-align: right;
+text-overflow: ellipsis;
+white-space: nowrap;
+  }
+.dl-horizontal dd {
+margin-left: 180px;
+  }
+}
+</pre>
+<p>
+    <strong>
+        <dl>
+            <dt>
+                此处添加了一个媒体查询。也就是说，只有屏幕大于768px的时候，添加类名“.dl-horizontal”才具有水平定义列表效果。其实现主要方式：
+            </dt>
+            <dd>1、将dt设置了一个左浮动，并且设置了一个宽度为160px</dd>
+            <dd>2、将dd设置一个margin-left的值为180px，达到水平的效果</dd>
+            <dd> 3、当标题宽度超过160px时，将会显示三个省略号</dd>
+        </dl>
+    </strong>
+</p>
+<h5>practice</h5>
+<dl class="dl-horizontal">
+    <dt>罗鹏展</dt>
+    <dd>昵称，小黄罗</dd>
+    <dd>是小逗比的男朋友</dd>
+    <dt>刘慧慧</dt>
+    <dd>昵称，小逗比</dd>
+    <dd>是小黄罗的女朋友</dd>
+    <dt>just test just test just test 三个点点呢 lalallala</dt>
+    <dd>显示三个省略号is success</dd>
+</dl>
+
+<h3>2.15 代码风格</h3>
+code风格：
+<div>Bootstrap的代码风格有三种：
+    <code>&lt;code&gt;</code>、
+    <code>&lt;pre&gt;</code>和
+    <code>&lt;kbd&gt;</code>
+</div>
+<dl>
+    <dt>在使用代码时，用户可以根据具体的需求来使用不同的类型：</dt>
+    <dd>1、<code>&lt;code&gt;</code>：一般是针对于单个单词或单个句子的代码</dd>
+    <dd>1、<code>&lt;pre&gt;</code>：一般是针对于多行代码（也就是成块的代码）</dd>
+    <dd>1、<code>&lt;kbd&gt;</code>：一般是表示用户要通过键盘输入的内容</dd>
+</dl>
+
+<h3>2.16 代码风格二</h3>
+<pre class="pre-scrollable">
+    <code>&lt;code&gt;</code>
+    元素一般用于显示大块的代码，
+    并保证原有格式不变。
+    但有时候代码太多，
+    而且不想让其占有太大的页面篇幅，
+    就想控制代码块的大小。
+    Bootstrap也考虑到这一点，
+    你只需要在pre标签上添加类名“.pre-scrollable”，
+    就可以控制代码块区域最大高度为340px，
+    一旦超出这个高度，
+    就会在Y轴出现滚动条。
+
+/*源码请查看bootstrap.css第731行~第734行*/
+.pre-scrollable {
+max-height: 340px;
+overflow-y: scroll;
+}
+
+    longer
+    longer
+    longer
+    longer
+    longer
+</pre>
+</body>
+</html>

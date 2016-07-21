@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排版-table</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+<h3>2.17 表格</h3>
+<strong>Bootstrap为表格提供了1种基础样式和4种附加样式以及1个支持响应式的表格。</strong>
+<h5>1.基础表格.table</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>符号</th>
+            <th>class</th>
+            <th>作用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>☑</td>
+            <td>.table</td>
+            <td>基础表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-striped</td>
+            <td>斑马线表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-bordered</td>
+            <td>带边框的表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-hover</td>
+            <td>鼠标悬浮高亮的表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-condensed</td>
+            <td>紧凑型表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-responsive</td>
+            <td>响应式表格</td>
+        </tr>
+    </tbody>
+</table>
+<dl>
+    <dt>“.table”主要有三个作用：</dt>
+    <dd>☑  给表格设置了margin-bottom:20px以及设置单元内距</dd>
+    <dd>☑  在thead底部设置了一个2px的浅灰实线</dd>
+    <dd>☑  每个单元格顶部设置了一个1px的浅灰实线</dd>
+</dl>
+
+
+<hr />
+
+
+<h5>2.斑马线表格 .table-striped</h5>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>符号</th>
+        <th>class</th>
+        <th>作用</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>☑</td>
+        <td>.table</td>
+        <td>基础表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-striped</td>
+        <td>斑马线表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-bordered</td>
+        <td>带边框的表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-hover</td>
+        <td>鼠标悬浮高亮的表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-condensed</td>
+        <td>紧凑型表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-responsive</td>
+        <td>响应式表格</td>
+    </tr>
+    </tbody>
+</table>
+<h6>其效果与基础表格相比，仅是在<i>tbody</i><strong>隔行有一个浅灰色的背景色。</strong></h6>
+<p>
+    <strong>使用方式：</strong>
+    只需要在基础表格<code>&lt;table class="table"&gt;</code>基础上添加一个“<strong>.table-striped</strong>”类名即可
+</p>
+<small>源码请查看bootstrap.css文件第1465行~第1468行：</small>
+<pre>
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+background-color: #f9f9f9;
+}
+</pre>
+
+
+<hr />
+
+
+<h5>3.带边框的表格 .table-bordered</h5>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>符号</th>
+        <th>class</th>
+        <th>作用</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>☑</td>
+        <td>.table</td>
+        <td>基础表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-striped</td>
+        <td>斑马线表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-bordered</td>
+        <td>带边框的表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-hover</td>
+        <td>鼠标悬浮高亮的表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-condensed</td>
+        <td>紧凑型表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-responsive</td>
+        <td>响应式表格</td>
+    </tr>
+    </tbody>
+</table>
+<h6>即所有单元格具有一条<strong>1px</strong>的边框。</h6>
+<p>
+    <strong>使用方式：</strong>
+    只需要在基础表格<code>&lt;table class="table"&gt;</code>基础上添加一个“<strong>.table-bordered</strong>”类名即可
+</p>
+<small>其源码可以查看bootstrap.css文件第1450行~第1464行：</small>
+<pre>
+.table-bordered {
+  border: 1px solid #ddd;/*整个表格设置边框*/
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #ddd; /*每个单元格设置边框*/
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;/*表头底部边框*/
+}
+</pre>
+
+
+<hr />
+
+<h5>4.鼠标悬停高亮的表格 .table-hover</h5>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>符号</th>
+        <th>class</th>
+        <th>作用</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>☑</td>
+        <td>.table</td>
+        <td>基础表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-striped</td>
+        <td>斑马线表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-bordered</td>
+        <td>带边框的表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-hover</td>
+        <td>鼠标悬浮高亮的表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-condensed</td>
+        <td>紧凑型表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-responsive</td>
+        <td>响应式表格</td>
+    </tr>
+    </tbody>
+</table>
+<p>当鼠标悬停在表格的行上面有一个高亮的背景色，这样的表格让人看起来就是舒服，时刻告诉用户正在阅读表格哪一行的数据。</p>
+<p>
+    <strong>使用方式：</strong>
+    只需要在基础表格<code>&lt;table class="table"&gt;</code>基础上添加一个“<strong>.table-hover</strong>”类名即可,并可与其他表格形式<strong>混合使用</strong>。
+</p>
+<small>鼠标悬浮高亮的效果主要是通过“hover”事件来实现，设置了<strong>“tr:hover”时的th、td</strong>的背景色为新颜色。</small>
+<br/>
+<small>其源码请查看bootstrap.css文件中第1469行~第1472行：</small>
+<pre>
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+background-color: #f5f5f5;
+}
+</pre>
+
+
+<hr />
+
+
+<h5>5.紧凑型表格 .table-condensed</h5>
+<table class="table table-condensed">
+    <thead>
+    <tr>
+        <th>符号</th>
+        <th>class</th>
+        <th>作用</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>☑</td>
+        <td>.table</td>
+        <td>基础表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-striped</td>
+        <td>斑马线表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-bordered</td>
+        <td>带边框的表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-hover</td>
+        <td>鼠标悬浮高亮的表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-condensed</td>
+        <td>紧凑型表格</td>
+    </tr>
+    <tr>
+        <td>☑</td>
+        <td>.table-responsive</td>
+        <td>响应式表格</td>
+    </tr>
+    </tbody>
+</table>
+<p><strong>紧凑型表格:</strong>简单理解，就是单元格没内距或者内距较其他表格的内距更小。换句话说，要实现紧凑型表格只需要重置表格单元格的内距padding的值。</p>
+<strong>Bootstrap中紧凑型的表格与基础表格差别不大，因为只是将单元格的内距由8px调至5px。</strong>
+<br/>
+<small>源码请查看bootstrap.css文件第1442行~第1449行：</small>
+<pre>
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+padding: 5px;
+}
+</pre>
+
+<p class="text-danger"><b>千万注意，你的<code>&lt;table&gt;</code>元素中一定不能缺少类名“table”。</b></p>
+<hr />
+
+
+<h5>6.响应式表格 .table-responsive</h5>
+<div class="table-responsive">
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>符号</td>
+            <td>class</td>
+            <td>作用</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>☑</td>
+            <td>.table</td>
+            <td>基础表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-striped</td>
+            <td>斑马线表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-bordered</td>
+            <td>带边框表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-hover</td>
+            <td>鼠标悬停高亮表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-condensed</td>
+            <td>紧凑型表格</td>
+        </tr>
+        <tr>
+            <td>☑</td>
+            <td>.table-responsive</td>
+            <td>响应式表格</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p>Bootstrap提供了一个容器，并且此容器设置类名“.table-responsive”,此容器就具有响应式效果，
+    然后将<code>&lt;table class="table"&gt;</code>置于这个容器当中，这样表格也就具有响应式效果。</p>
+<p>Bootstrap中响应式表格效果表现为：当你的浏览器可视区域<strong>小于768px</strong>时，表格底部会出现水平滚动条。当你的浏览器可视区域<strong>大于768px</strong>时，表格底部水平滚动条就会消失。</p>
+<hr />
+
+
+
+<h3>2.18表格--表格行<code> &lt;tr &gt;</code>的类</h3>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>class</td>
+            <td>description</td>
+            <td>color</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active">
+            <td>.active</td>
+            <td>表示当前活动的信息</td>
+            <td>#f5f5f5</td>
+        </tr>
+        <tr class="success">
+            <td>.success</td>
+            <td>表示成功或正确的行为</td>
+            <td>#dffd08</td>
+        </tr>
+        <tr class="info">
+            <td>.info</td>
+            <td>表示中立的信息或行为</td>
+            <td>#d9edf7</td>
+        </tr>
+        <tr class="warning">
+            <td>.warning</td>
+            <td>表示警告，需要特别注意</td>
+            <td>#fcf8e3</td>
+        </tr>
+        <tr class="danger">
+            <td>.danger</td>
+            <td>表示危险或者是可能错误的行为</td>
+            <td>#f2dede</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
